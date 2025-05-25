@@ -30,3 +30,96 @@ main {
 main:has(.back-link) {
   text-align: center;
 }
+/* form */
+
+form {
+  display: flex;
+  margin: 30px auto;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+/* ГАЛЕРЕЯ */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gallery-item {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  transition: transform 0.2s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.02);
+}
+
+.gallery-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.photo-card img {
+  width: 100%;
+  display: block;
+  height: 180px;
+  object-fit: cover;
+}
+
+.info {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: #555;
+}
+
+.info-item {
+  margin: 4px 8px 0 0;
+}
+
+/* ЛОАДЕР */
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #007bff;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+  display: none; /* прихований за замовчуванням */
+}
+
+.loader.hidden {
+  display: none;
+}
+
+.loader:not(.hidden) {
+  display: block;
+}
+
+/* Анімація обертання */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.btn-load-more {
+  display: block; /* або inline-block */
+  margin: 0 auto;
+  padding: 10px 10px;
+  background-color: #edeff0;
+  color: rgb(12, 11, 11);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
